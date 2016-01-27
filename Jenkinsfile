@@ -2,6 +2,5 @@
 
 stage 'Build'
 node {
-    checkout scm
-    sh("hello from demo-ci project!")
+    sh "hello from demo-ci project!"
 }
