@@ -1,1 +1,7 @@
-sh("echo hello from ci-demo!")
+#!groovy
+
+stage 'Build'
+node {
+    checkout scm
+    sh("hello from demo-ci project!")
+}
