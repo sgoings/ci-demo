@@ -2,5 +2,5 @@
 
 stage 'Build'
 node {
-    sh "hello from demo-ci project!"
+    sh "echo hello from demo-ci project!"
 }
