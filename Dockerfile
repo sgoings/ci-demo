@@ -1,13 +1,6 @@
-FROM node:0.10.40
+FROM jenkins
 
-ENV URL=http://localhost:5000 PORT=5000 HOST=0.0.0.0 DB_HOST=mysql DB_USER=ghost DB_PASS=ghost DB_NAME=ghost
+COPY jenkins_config/plugins.txt /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
-WORKDIR /ghost
-
-COPY . /ghost
-
-RUN npm install --production
-
-EXPOSE 5000
-
-CMD ["npm", "start", "--production"]
+COPY jenkins_config/executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
