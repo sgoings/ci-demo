@@ -3,6 +3,9 @@ FROM jenkins
 # needed to be able to mount directories in cloud providers
 USER root
 
+COPY config/insecure_rsa /home/ubuntu/.ssh/insecure_rsa
+COPY config/insecure_rsa.pub /home/ubuntu/.ssh/insecure_rsa.pub
+
 RUN curl -sSL http://deis.io/deis-cli/install-v2-alpha.sh | bash
 RUN mv deis /usr/local/bin
 
