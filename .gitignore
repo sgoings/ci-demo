@@ -2,3 +2,4 @@ node_modules/*
 content/images/*
 /jenkins-master/jenkins
 /deis/deis
+/deis/helm
